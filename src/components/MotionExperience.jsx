@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { AnimatePresence, motion, useMotionValue, useReducedMotion, useScroll, useSpring } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
+import { StarMark } from './StarMark';
 
 const dramaticEase = [0.76, 0, 0.24, 1];
 
@@ -29,58 +30,58 @@ export function IntroSequence() {
   };
 
   return (
-    <AnimatePresence>
-      {show && (
-        <motion.div
-          key="intro"
-          initial={{ clipPath: 'inset(0% 0% 0% 0%)' }}
-          exit={{ clipPath: 'inset(0% 0% 100% 0%)' }}
-          transition={{ duration: 0.9, ease: dramaticEase }}
-          className="motion-intro fixed inset-0 z-[120] flex flex-col items-center justify-center overflow-hidden bg-night text-night-foreground"
-          aria-label="Opening portfolio animation"
-        >
-          <div className="intro-grid" aria-hidden="true" />
-          <motion.div
-            aria-hidden="true"
-            className="brand-glow absolute left-1/2 top-1/2 h-[520px] w-[520px] -translate-x-1/2 -translate-y-1/2 rounded-full"
-            initial={{ scale: 0.4, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 1.2, ease: dramaticEase }}
-          />
-          <motion.div
-            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 font-display text-[clamp(14rem,40vw,34rem)] font-extrabold leading-none text-brand/10"
-            initial={{ rotate: -90, scale: 0.6, opacity: 0 }}
-            animate={{ rotate: 0, scale: 1, opacity: 1 }}
-            transition={{ duration: 1, ease: dramaticEase }}
-            aria-hidden="true"
-          >✳</motion.div>
-          <motion.p
-            initial={{ y: 30, opacity: 0 }} animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.16 }}
-            className="relative z-10 font-mono text-[10px] font-semibold uppercase tracking-[.45em] text-brand sm:text-[12px]"
-          >WELCOME TO MY SPACE</motion.p>
-          <div className="relative z-10 mt-4 flex items-center overflow-hidden px-4">
-            {'SANDEEPA'.split('').map((ch, i) => (
-              <motion.span
-                key={i}
-                initial={{ y: '115%' }} animate={{ y: '0%' }}
-                transition={{ duration: 0.7, delay: 0.18 + i * 0.045, ease: dramaticEase }}
-                className="intro-word inline-block font-display font-extrabold tracking-[-.05em]"
-              >{ch}</motion.span>
-            ))}
-            <motion.span
-              initial={{ scale: 0 }} animate={{ scale: 1 }}
-              transition={{ delay: 0.7, type: 'spring', stiffness: 400, damping: 14 }}
-              className="intro-word inline-block font-display font-extrabold text-brand"
-            >.</motion.span>
-          </div>
-          <div className="absolute bottom-[68px] left-1/2 h-[2px] w-[200px] -translate-x-1/2 overflow-hidden rounded-full bg-night-line">
-            <motion.div className="h-full bg-brand" initial={{ width: '0%' }} animate={{ width: '100%' }} transition={{ duration: 1.45, ease: 'easeInOut' }} />
-          </div>
-          <button type="button" onClick={skip} className="absolute bottom-6 right-6 rounded-full border border-night-line px-4 py-2 font-mono text-[11px] text-night-foreground transition-colors hover:border-brand hover:text-brand">Skip intro <ArrowUpRight className="ml-1 inline" size={13} /></button>
-        </motion.div>
-      )}
-    </AnimatePresence>
+      <AnimatePresence>
+        {show && (
+            <motion.div
+                key="intro"
+                initial={{ clipPath: 'inset(0% 0% 0% 0%)' }}
+                exit={{ clipPath: 'inset(0% 0% 100% 0%)' }}
+                transition={{ duration: 0.9, ease: dramaticEase }}
+                className="motion-intro fixed inset-0 z-[120] flex flex-col items-center justify-center overflow-hidden bg-night text-night-foreground"
+                aria-label="Opening portfolio animation"
+            >
+              <div className="intro-grid" aria-hidden="true" />
+              <motion.div
+                  aria-hidden="true"
+                  className="brand-glow absolute left-1/2 top-1/2 h-[520px] w-[520px] -translate-x-1/2 -translate-y-1/2 rounded-full"
+                  initial={{ scale: 0.4, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  transition={{ duration: 1.2, ease: dramaticEase }}
+              />
+              <motion.div
+                  className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 font-display text-[clamp(14rem,40vw,34rem)] font-extrabold leading-none text-brand/10"
+                  initial={{ rotate: -90, scale: 0.6, opacity: 0 }}
+                  animate={{ rotate: 0, scale: 1, opacity: 1 }}
+                  transition={{ duration: 1, ease: dramaticEase }}
+                  aria-hidden="true"
+              ><StarMark className="!h-[.72em] !w-[.72em]" strokeWidth={3} /></motion.div>
+              <motion.p
+                  initial={{ y: 30, opacity: 0 }} animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.6, delay: 0.16 }}
+                  className="relative z-10 font-mono text-[10px] font-semibold uppercase tracking-[.45em] text-brand sm:text-[12px]"
+              >WELCOME TO MY SPACE</motion.p>
+              <div className="relative z-10 mt-4 flex items-center overflow-hidden px-4">
+                {'SANDEEPA'.split('').map((ch, i) => (
+                    <motion.span
+                        key={i}
+                        initial={{ y: '115%' }} animate={{ y: '0%' }}
+                        transition={{ duration: 0.7, delay: 0.18 + i * 0.045, ease: dramaticEase }}
+                        className="intro-word inline-block font-display font-extrabold tracking-[-.05em]"
+                    >{ch}</motion.span>
+                ))}
+                <motion.span
+                    initial={{ scale: 0 }} animate={{ scale: 1 }}
+                    transition={{ delay: 0.7, type: 'spring', stiffness: 400, damping: 14 }}
+                    className="intro-word inline-block font-display font-extrabold text-brand"
+                >.</motion.span>
+              </div>
+              <div className="absolute bottom-[68px] left-1/2 h-[2px] w-[200px] -translate-x-1/2 overflow-hidden rounded-full bg-night-line">
+                <motion.div className="h-full bg-brand" initial={{ width: '0%' }} animate={{ width: '100%' }} transition={{ duration: 1.45, ease: 'easeInOut' }} />
+              </div>
+              <button type="button" onClick={skip} className="absolute bottom-6 right-6 rounded-full border border-night-line px-4 py-2 font-mono text-[11px] text-night-foreground transition-colors hover:border-brand hover:text-brand">Skip intro <ArrowUpRight className="ml-1 inline" size={13} /></button>
+            </motion.div>
+        )}
+      </AnimatePresence>
   );
 }
 
@@ -121,20 +122,20 @@ export function CursorAura() {
   }, [x, y]);
 
   return (
-    <>
-      <motion.div
-        aria-hidden="true"
-        className="motion-cursor pointer-events-none fixed left-0 top-0 z-[105] -ml-[19px] -mt-[19px] rounded-full"
-        animate={{ opacity: visible ? 1 : 0, scale: hovering ? 1.8 : 1 }}
-        transition={{ opacity: { duration: 0.2 }, scale: { type: 'spring', stiffness: 380, damping: 26 } }}
-        style={{ x: ringX, y: ringY }}
-      />
-      <motion.div
-        aria-hidden="true"
-        className="motion-cursor-dot pointer-events-none fixed left-0 top-0 z-[106] -ml-[3px] -mt-[3px] rounded-full"
-        animate={{ opacity: visible && !hovering ? 1 : 0 }}
-        style={{ x, y }}
-      />
-    </>
+      <>
+        <motion.div
+            aria-hidden="true"
+            className="motion-cursor pointer-events-none fixed left-0 top-0 z-[105] -ml-[19px] -mt-[19px] rounded-full"
+            animate={{ opacity: visible ? 1 : 0, scale: hovering ? 1.8 : 1 }}
+            transition={{ opacity: { duration: 0.2 }, scale: { type: 'spring', stiffness: 380, damping: 26 } }}
+            style={{ x: ringX, y: ringY }}
+        />
+        <motion.div
+            aria-hidden="true"
+            className="motion-cursor-dot pointer-events-none fixed left-0 top-0 z-[106] -ml-[3px] -mt-[3px] rounded-full"
+            animate={{ opacity: visible && !hovering ? 1 : 0 }}
+            style={{ x, y }}
+        />
+      </>
   );
 }
