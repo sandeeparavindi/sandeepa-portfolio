@@ -94,7 +94,7 @@ export default function About() {
             </span>
           </h3>
           <Reveal delay={0.1}>
-            <p className="paragraph mt-8">I'm pursuing a BSc (Hons) in Software Engineering at NSBM Green University, after completing an HND in Software Engineering at IJSE. I build responsive web applications, secure APIs and practical AI-enhanced features.</p>
+            <p className="paragraph mt-8">I'm pursuing a BSc (Hons) in Software Engineering at NSBM Green University, after completing an HND in Software Engineering at IJSE. I build responsive web applications, secure APIs, and practical AI-enhanced features, using Claude-assisted software development to improve coding efficiency, problem-solving, and development workflows.</p>
             <p className="paragraph mt-4">My AI-Powered Recruitment & Talent Management Platform brings together full-stack engineering and Gemini AI integration. I'm also expanding into Flutter and Dart through collaborative mobile development.</p>
           </Reveal>
           <div className="mt-10 grid grid-cols-3 gap-3">
