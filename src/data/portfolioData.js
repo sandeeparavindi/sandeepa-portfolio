@@ -25,7 +25,8 @@ export const capabilities = [
   {
     no: '01', title: 'Full-Stack Web Development', kicker: 'Frontend + Backend',
     summary: 'Building intuitive web experiences and the dependable systems behind them.',
-    bullets: ['Responsive interfaces with React, TypeScript and Tailwind CSS', 'REST APIs with Node.js, Express and ASP.NET Core', 'Maintainable application structure and database integrations'],
+    bullets: ['Responsive interfaces with React, TypeScript and Tailwind CSS', 'REST APIs with Node.js, ' +
+    'Express and ASP.NET Core', 'Maintainable application structure and database integrations'],
   },
   {
     no: '02', title: 'Mobile Application Development', kicker: 'Currently exploring',
@@ -75,7 +76,7 @@ export const projects = [
       'Integrated Google Gemini AI into recruitment features and applied JWT-based, role-based access control to secure user workflows.',
     ],
     kind: 'recruitment',
-    repositoryUrl: '', demoUrl: '',
+    repositoryUrl: 'https://github.com/sandeeparavindi/AI-Powered-Recruitment-and-Talent-Management-Platform.git', demoUrl: '',
   },
   {
     id: 'crop', number: '02',
@@ -93,6 +94,10 @@ export const projects = [
     ],
     kind: 'crop',
     repositoryUrl: '', demoUrl: '',
+    repositories: [
+      { label: 'Frontend repo', url: 'https://github.com/sandeeparavindi/Crop-Monitoring-System---Frontend.git' },
+      { label: 'Backend repo', url: 'https://github.com/sandeeparavindi/Crop-Monitoring-System-Backend.git' },
+    ],
   },
   {
     id: 'rental', number: '03',
@@ -110,6 +115,10 @@ export const projects = [
     ],
     kind: 'rental',
     repositoryUrl: '', demoUrl: '',
+    repositories: [
+      { label: 'Frontend repo', url: 'https://github.com/sandeeparavindi/React_Car_Rental_Frontend.git' },
+      { label: 'Backend repo', url: 'https://github.com/sandeeparavindi/Car_Rental_Backend.git' },
+    ],
   },
 ];
 
