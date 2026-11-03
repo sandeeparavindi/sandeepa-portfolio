@@ -23,23 +23,9 @@ Designed with a sleek **Yellow & Black theme**, smooth animations, and a clean u
 - Contact and social media links
 - Downloadable CV
 
-## 💻 Getting Started
-
-```bash
-git clone <your-repository-url>
-cd <your-project-folder>
-npm install
-npm run dev
-```
-
 ## 🌐 Live Portfolio
 
-🔗 **Live Website:** [View Portfolio](https://your-portfolio-url.vercel.app)
-
-## 📬 Connect With Me
-
-- **GitHub:** [Sandeepa Ravindi](https://github.com/)
-- **LinkedIn:** [LinkedIn Profile](https://linkedin.com/)
+🔗 **Live Website:** [View Portfolio](https://sandeepa-portfolio-wheat.vercel.app/)
 
 ---
 
